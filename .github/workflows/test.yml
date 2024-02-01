@@ -40,6 +40,7 @@ jobs:
       - name: test
         run: |
           sudo dpkg -i google-chrome.deb
-          # get version and assert if it's the same as the one we want to install
+          google-chrome --version
+          google-chrome --version 2>&1 | awk '{print $3}'
           [ "$(google-chrome --version 2>&1 | awk '{print $3}')" == "${{ env.CHROME_VERSION }}" ] || { echo "Error: Chrome version does not match the desired version."; exit 1; }
           
