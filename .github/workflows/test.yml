@@ -44,7 +44,7 @@ jobs:
           sudo dpkg -i google-chrome.deb
           google-chrome --version
           google-chrome --version 2>&1 | tr -cd '[:digit:].'
-          [ "$(google-chrome --version 2>&1 | tr -cd '[:digit:].')" == "${CHROME_VERSION}" ] || { echo "Error: Chrome version does not match the desired version."; exit 1; }
+          [ "$(google-chrome --version 2>&1 | tr -cd '[:digit:].')" == $(echo ${{ env.CHROME_VERSION }} | tr -cd '[:digit:].')) ] || { echo "Error: Chrome version does not match the desired version."; exit 1; }
           
           
           
