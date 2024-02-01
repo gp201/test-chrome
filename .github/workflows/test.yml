@@ -36,7 +36,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install libappindicator3-1
-          curl -L -o google-chrome.deb https://github.com/webnicer/chrome-downloads/raw/master/x64.deb/${{ env.CHROME_VERSION }}/google-chrome-stable_${{ env.CHROME_VERSION }}_amd64.deb
+          curl -L -o google-chrome.deb https://github.com/webnicer/chrome-downloads/raw/master/x64.deb/google-chrome-stable_${{ env.CHROME_VERSION }}_amd64.deb
       - name: test
         run: |
           sudo dpkg -i google-chrome.deb
