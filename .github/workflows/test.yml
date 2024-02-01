@@ -45,7 +45,7 @@ jobs:
           google-chrome --version
           google-chrome --version 2>&1 | tr -cd '[:digit:].'
           chrome_version=$(google-chrome --version 2>&1 | tr -cd '[:digit:].')
-          [[ "${{ env.CHROME_VERSION }}" == "$chrome_version"* ]] || { echo "Error: Desired version does not start with Chrome version.";}
+          [[ "${{ env.CHROME_VERSION }}" == "$chrome_version"* ]] || { echo "Error: Desired version does not start with Chrome version."; exit 1;}
           
           
           
